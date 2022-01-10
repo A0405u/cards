@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СказККИ</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="scripts/main.js"></script> 
+</head>
+<body onload="init()">
+    <h1><img class = "logo" src = "images/skazkki.png" alt = "СКАЗККИ"></h1>
+    <div class = "leftcard">
+        <div class = "flipper">
+            <img class = front src = "images/front.png" alt = "Card front" draggable = "false">
+            <img class = back src = "images/back.png" alt = "Card back" draggable = "false">
+        </div>
+        <div class = name>name</div>
+        <a class = "link twitter" href = ""><img src = "images/twitter.png" alt = "Twitter" draggable = "false"></a>
+        <a class = "link vk" href = ""><img src = "images/vk.png" alt = "Twitter" draggable = "false"></a>
+    </div>
+    <div class = "opencard">
+        <div class = "flipper rotate">
+            <img class = front src = "images/front.png" alt = "Card front" draggable = "false">
+            <img class = back src = "images/back.png" alt = "Card back" draggable = "false">
+        </div>
+        <div class = name>name</div>
+        <a class = "link twitter" href = ""><img src = "images/twitter.png" alt = "Twitter" draggable = "false"></a>
+        <a class = "link vk" href = ""><img src = "images/vk.png" alt = "Twitter" draggable = "false"></a>
+    </div>
+    <div class = "rightcard">
+        <div class = "flipper">
+            <img class = front src = "images/front.png" alt = "Card front" draggable = "false">
+            <img class = back src = "images/back.png" alt = "Card back" draggable = "false">
+        </div>
+        <div class = name>name</div>
+        <a class = "link twitter" href = ""><img src = "images/twitter.png" alt = "Twitter" draggable = "false"></a>
+        <a class = "link vk" href = ""><img src = "images/vk.png" alt = "Twitter" draggable = "false"></a>
+    </div>
+    <div class = "supportcard">
+        <div class = "flipper">
+            <img class = front src = "images/front.png" alt = "Card front" draggable = "false">
+            <img class = back src = "images/back.png" alt = "Card back" draggable = "false">
+        </div>
+        <div class = name>name</div>
+        <a class = "link twitter" href = ""><img src = "images/twitter.png" alt = "Twitter" draggable = "false"></a>
+        <a class = "link vk" href = ""><img src = "images/vk.png" alt = "Twitter" draggable = "false"></a>
+    </div>
+    <div class = background> </div>
+    <main>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/fool_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/fool_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/yg_fool">fool</a> -->
+            <div class = name>fool</div>
+            <a class = "link twitter" href = "https://twitter.com/yg_fool"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/a3um_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/a3um_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/a3um_pixels">a3um</a> -->
+            <div class = name>a3um</div>
+            <a class = "link twitter" href = "https://twitter.com/a3um_pixels"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/theo_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/theo_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/theodote_">Theodote</a> -->
+            <div class = name>Theodote</div>
+            <a class = "link twitter" href = "https://twitter.com/theodote_"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/dih_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/dih_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/dihstash">Di.H</a> -->
+            <div class = name>Di.H</div>
+            <a class = "link twitter" href = "https://twitter.com/DiH_pixels"></a>
+            <a class = "link vk" href = "https://vk.com/dihstash"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/cherry_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/cherry_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/echerry">echerry</a> -->
+            <div class = name>echerry</div>
+            <a class = "link twitter" href = "https://twitter.com/eCherryArt"></a>
+            <a class = "link vk" href = "https://vk.com/echerry"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/dethrood_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/dethrood_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/dethrood2">dethrood</a> -->
+            <div class = name>dethrood</div>
+            <a class = "link twitter" href = "https://twitter.com/dethrood2"></a>
+        </div>
+        <!-- <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/0405_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/0405_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <div class = name>a0405u</div>
+            <a class = "link twitter" href = ""></a>
+            <a class = "link vk" href = ""></a>
+        </div> -->
+        <!-- <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/todo_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/todo_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <div class = name>todo asano</div>
+            <a class = "link twitter" href = ""></a>
+            <a class = "link vk" href = ""></a>
+        </div> -->
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/onhore_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/onhore_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/onhore_pixels">Onhore</a> -->
+            <div class = name>Onhore</div>
+            <a class = "link twitter" href = "https://twitter.com/onhore_pixel/"></a>
+            <a class = "link vk" href = "https://vk.com/onhore_pixels"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/krutskoy_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/krutskoy_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/vanyakrutskoy">Krutskoy</a> -->
+            <div class = name>Krutskoy</div>
+            <a class = "link vk" href = "https://vk.com/vanyakrutskoy"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/koseek_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/koseek_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "">koseek</a> -->
+            <div class = name>koseek</div>
+            <a class = "link vk" href = "https://vk.com/koseekpublic"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/belyash_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/belyash_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/clovtheflow">clovtheflow</a> -->
+            <div class = name>clovtheflow</div>
+            <a class = "link twitter" href = "https://twitter.com/clovtheflow"></a>
+            <a class = "link vk" href = "https://vk.com/clovtheflow"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/lana_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/lana_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/garbatateam">KusSv</a> -->
+            <div class = name>KusSv</div>
+            <a class = "link twitter" href = "https://twitter.com/KusSv"></a>
+            <a class = "link vk" href = "https://vk.com/garbatateam"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/kybercube_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/kybercube_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/Cube6">KyberCube</a> -->
+            <div class = name>KyberCube</div>
+            <a class = "link vk" href = "https://vk.com/Cube6"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/vorona_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/vorona_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/v0r384n4ya">Vorona</a> -->
+            <div class = name>Vorona</div>
+            <a class = "link vk" href = "https://vk.com/v0r384n4ya"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/chamm_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/chamm_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/chamem">Chamm</a> -->
+            <div class = name>Chamm</div>
+            <a class = "link vk" href = "https://vk.com/chamem"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/pechkot_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/pechkot_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/pe4q07">pe4Q07</a> -->
+            <div class = name>pe4Q07</div>
+            <a class = "link twitter" href = "https://twitter.com/Yogr142"></a>
+            <a class = "link vk" href = "https://vk.com/pe4q07"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/dark_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/dark_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/darkfairy">Dark</a> -->
+            <div class = name>Dark</div>
+            <a class = "link vk" href = "https://vk.com/darkfairy"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/kotya_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/kotya_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/club113230556">Kotya_art</a> -->
+            <div class = name>Kotya_art</div>
+            <a class = "link twitter" href = "https://twitter.com/kotya_art"></a>
+            <a class = "link vk" href = "https://vk.com/club113230556"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/entropia_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/entropia_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/runofhouse">entropia</a> -->
+            <div class = name>entropia</div>
+            <a class = "link vk" href = "https://vk.com/runofhouse"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/kvas_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/kvas_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/diseven.pixelartist">diseven</a> -->
+            <div class = name>diseven</div>
+            <a class = "link vk" href = "https://vk.com/diseven.pixelartist"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/limon_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/limon_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/limonmaket">pess</a> -->
+            <div class = name>pess</div>
+            <a class = "link twitter" href = "https://twitter.com/limonmaket"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/veli_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/veli_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/veliveli">Veli</a> -->
+            <div class = name>Veli</div>
+            <a class = "link twitter" href = "https://twitter.com/VeliTheTunes"></a>
+            <a class = "link vk" href = "https://vk.com/veliveli"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/grimmnail_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/grimmnail_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/onegaugenailer">grimmnail</a> -->
+            <div class = name>grimmnail</div>
+            <a class = "link twitter" href = "https://twitter.com/GrimmNail"></a>
+            <a class = "link vk" href = "https://vk.com/onegaugenailer"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/morfarius_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/morfarius_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://twitter.com/morfarius_nm">morfarius</a> -->
+            <div class = name>morfarius</div>
+            <a class = "link twitter" href = "https://twitter.com/morfarius_nm"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/peege_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/peege_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/pixelpigeon">peege.on</a> -->
+            <div class = name>peege.on</div>
+            <a class = "link twitter" href = "https://twitter.com/peege_on"></a>
+            <a class = "link vk" href = "https://vk.com/pixelpigeon"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/petronium_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/petronium_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/club199506024">Petronium</a> -->
+            <div class = name>Petronium</div>
+            <a class = "link twitter" href = "https://twitter.com/m_petroniu"></a>
+            <a class = "link vk" href = "https://vk.com/club199506024"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/dneprovsky_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/dneprovsky_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/dneprovsky_pixel_art">Dneprovsky</a> -->
+            <div class = name>Dneprovsky</div>
+            <a class = "link vk" href = "https://vk.com/dneprovsky_pixel_art"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/dorefi_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/dorefi_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "">Dorefi</a> -->
+            <div class = name>Dorefi</div>
+            <a class = "link vk" href = "https://vk.com/dorefi"></a>
+        </div>
+        <div class = card>
+            <div class = flipper>
+                <img class = front src = "images/petronium2_front.png" alt = "Card front" draggable = "false">
+                <img class = back src = "images/petronium2_back.png" alt = "Card back" draggable = "false">
+            </div>
+            <!-- <a class = name href = "https://vk.com/club199506024">Petronium</a> -->
+            <div class = name>Petronium</div>
+            <a class = "link twitter" href = "https://twitter.com/m_petroniu"></a>
+            <a class = "link vk" href = "https://vk.com/club199506024"></a>
+        </div>
+    </main>
+    <div class = links>
+        Создано при участии:</br>
+        <a href = "https://vk.com/dotpixel">.Pixel</a>,
+        <a href = "https://0x405.ru">0x405</a>,
+        <a href = "https://vk.com/squared_fish">Селёдка²</a>
+    </div>
+</body>
+</html>

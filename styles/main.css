@@ -1,0 +1,778 @@
+@font-face {
+    font-family: "Skazkki";
+    src: url("fonts/skazkki-webfont.woff2") format("woff2"),
+         url("fonts/skazkki-webfont.woff") format("woff");
+  }
+
+@font-face {
+font-family: "Skazkki Wide";
+src: url("fonts/skazkkiwide-webfont.woff2") format("woff2"),
+        url("fonts/skazkkiwide-webfont.woff") format("woff");
+}
+
+:root
+{
+    --bg: black;
+    --fg: white;
+    --light: white;
+    --dark: blue;
+
+    --width: 640px;
+    --height: 1568px;
+    --top: 16px;
+    --bottom: 40px;
+
+    --cardw: 128px;
+    --cardh: 192px;
+    --cardp: 16px;
+    
+    --ocardw: 256px;
+    --ocardh: 384px;
+    --ocardp: 32px;
+
+    --pcardh: 176px;
+    --pcardw: 112px;
+    --pcardp: 24px;
+
+    --np: 5px;
+    --pnp: 13px;
+    --onp: 24px;
+
+    --lh: 20px;
+    --lw: 20px;
+    --lp: 4px;
+    --lpt: 8px;
+
+    --hh: 160px;
+    --hw: 288px;
+    --fs: 11px;
+    --fb: 22px;
+
+    --fromx: 0px;
+    --fromy: 0px;
+    --tox: 0px;
+    --toy: 0px;
+    --fromr: 180deg;
+    --tor: 0deg;
+
+    --lfromx: -128px;
+    --lfromy: 50vh;
+    --ltox: 0px;
+    --ltoy: 50vh;
+
+    --rfromx: 150vw;
+    --rfromy: 50vh;
+    --rtox: 100vw;
+    --rtoy: 50vh;
+
+    --slow: 0.6s;
+    --fast: 0.24s;
+
+    --rspeed: 4s;
+    --r: 180deg;
+}
+
+*
+{
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    text-align: center;
+    margin: 0;
+}
+
+body
+{
+    /* height: 100vh; */
+    width: 100%;
+    background: var(--bg);
+}
+
+h1
+{
+    text-align: center;
+    width: 100%;
+    height: var(--hh);
+    font-size: xx-large;
+    color: lightgray;
+    padding-top: var(--top);
+}
+
+.logo
+{
+    height: var(--hh);
+    width: var(--hw);
+}
+
+main
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: var(--top);
+    padding-bottom: var(--bottom);
+    width: var(--width);
+    height: var(--height);
+    margin: auto;
+    color: var(--fg);
+    text-align: center;
+}
+
+img
+{
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering:optimizeSpeed;             /* Legal fallback */
+    image-rendering:-moz-crisp-edges;          /* Firefox        */
+    image-rendering:-o-crisp-edges;            /* Opera          */
+    image-rendering:-webkit-optimize-contrast; /* Safari         */
+    image-rendering:optimize-contrast;         /* CSS3 Proposed  */
+    image-rendering:crisp-edges;               /* CSS4 Proposed  */
+    image-rendering:pixelated;                 /* CSS4 Proposed  */
+    -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
+    image-rendering: pixelated;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events:none;
+}
+
+.name
+{
+    font-family: Skazkki;
+    /* text-transform: uppercase; */
+    font-size: var(--fs);
+    padding-top: var(--np);
+    /* padding-bottom: 3px; */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.supportcard
+{
+    display: none;
+}
+
+.name
+{
+    transition: font-size var(--fast), padding-top var(--fast), opacity var(--fast);
+    text-align: center;
+    text-decoration: none; /* no underline */
+    color: inherit;
+    opacity: 1;
+}
+
+.open .name, .opened .name 
+{
+    font-size: var(--fb);
+    padding-top: var(--onp);
+}
+
+.pressed .name
+{
+    padding-top: var(--pnp);
+    transition: none;
+}
+
+.link img
+{
+    height: var(--lh);
+    width: var(--lw);
+    padding-left: var(--lp);
+    padding-right: var(--lp);
+    padding-top: var(--lpt);
+}
+
+.link
+{
+    opacity: 0;
+    transition: opacity var(--fast) linear;
+    z-index: 9999999;
+}
+
+.opencard .link
+{
+    opacity: 1;
+}
+
+.opencard.slidel .link, .opencard.slider .link, .close .link
+{
+    opacity: 0;
+}
+
+.card, .opencard, .leftcard, .rightcard
+{
+    display: inline-block;
+    width: var(--cardw);
+    height: var(--cardh);
+    padding: var(--cardp);
+    margin: auto;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    position: relative;
+    color: lightgray;
+}
+
+.flipper
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform var(--slow);
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+.card:hover .flipper
+{
+    transform: rotateY(180deg);
+}
+
+.card:hover
+{
+    cursor: pointer;
+    color: white;
+}
+
+.pressed
+{
+    width: var(--pcardw);
+    height: var(--pcardh);
+    padding: var(--pcardp);
+}
+
+.front, .back
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.front
+{
+    transform: rotateY(180deg);
+}
+
+.back
+{
+    color: white;
+}
+
+.background
+{
+    display: none;
+    position: fixed;
+    z-index: 98;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 1); 
+    opacity: 0;
+}
+
+.show
+{
+    animation: show var(--fast) forwards ease;
+}
+
+.hide
+{
+    animation: hide var(--fast) forwards ease;
+}
+
+.opencard
+{
+    position: fixed;
+    cursor: pointer;
+    display: none;
+    z-index: 888;
+    color: white;
+    text-align: center;
+    left: var(--fromx);
+    top: var(--fromy);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.opencard .flipper
+{
+    transform: rotateY(var(--r));
+    transition: transform var(--fast) linear;
+}
+
+.opencard.open
+{
+    animation: open var(--fast) forwards ease;
+    /* transform: rotateY(180deg); */
+}
+
+.opencard.opened
+{
+    top: var(--toy);
+    left: var(--tox);
+    width: var(--ocardw);
+    height: var(--ocardh);
+}
+
+.opencard.slidel
+{
+    opacity: 0.25;
+    animation: slidel var(--fast) forwards ease;
+}
+
+.opencard.slider
+{
+    opacity: 0.25;
+    animation: slider var(--fast) forwards ease;
+}
+
+.opencard.slidel .name, .opencard.slider .name
+{
+    opacity: 0;
+}
+
+.opencard.slidel .flipper, .opencard.slider .flipper
+{
+    transform: rotateY(var(--tor));
+}
+
+/* .open .flipper
+{
+    animation: flip var(--fast) forwards linear;
+} */
+
+.close
+{
+    animation: close var(--fast) forwards ease;
+}
+
+.close .flipper
+{
+    transform: rotateY(var(--tor));
+}
+
+.selected
+{
+    visibility: hidden;
+}
+
+/* .selected .flipper
+{
+    transform: rotateY(180deg);
+} */
+
+.flip
+{
+    animation: flip 0.8s forwards ease;
+}
+
+.leftcard, .rightcard
+{
+    position: fixed;
+    cursor: pointer;
+    display: none;
+    z-index: 99;
+    width: var(--ocardw);
+    height: var(--ocardh);
+    padding: var(--ocardp);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0.25;
+    transition: opacity var(--fast) linear;
+}
+
+.leftcard .name, .rightcard .name
+{
+    opacity: 0;
+}
+
+.leftcard:hover, .rightcard:hover
+{
+    opacity: 1;
+}
+
+.leftcard.open
+{
+    animation: lopen var(--fast) forwards ease;
+}
+
+.leftcard.opened
+{
+    top: var(--ltoy);
+    left: var(--ltox);
+}
+
+.leftcard.close
+{
+    animation: lclose var(--fast) forwards ease;
+}
+
+.leftcard.slide
+{
+    opacity: 1;
+    z-index: 999;
+    animation: lslider var(--fast) forwards ease;
+}
+
+.rightcard.open
+{
+    animation: ropen var(--fast) forwards ease;
+}
+
+.rightcard.opened
+{
+    top: var(--rtoy);
+    left: var(--rtox);
+}
+
+.rightcard.close
+{
+    animation: rclose var(--fast) forwards ease;
+}
+
+.rightcard.slide
+{
+    opacity: 1;
+    z-index: 999;
+    animation: rslidel var(--fast) forwards ease;
+}
+
+.slide .flipper
+{
+    transform: rotateY(var(--fromr));
+}
+
+.slide .name
+{
+    opacity: 1;
+    color: white;
+}
+
+.links
+{
+    color:gray;
+    font-family: Skazkki;
+    font-size: var(--fs);
+}
+
+.links a
+{
+    color: inherit;
+    font-size: inherit;
+    text-decoration: inherit;
+    padding-bottom: var(--bottom);
+}
+
+.links a:hover
+{
+    color: white;
+}
+
+@keyframes open
+{
+    from
+    {
+        top: var(--fromy);
+        left: var(--fromx);
+        /* transform: translate3d(0, 0, 0); */
+        width: var(--cardw);
+        height: var(--cardh);
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+        /* transform: translate3d(-50%, -50%, 0); */
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+}
+
+@keyframes close
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        /* transform: translate3d(-50%, -50%, 0); */
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+    to
+    {
+        top: var(--fromy);
+        left: var(--fromx);
+        /* transform: translate3d(-50%, -50%, 0); */
+        width: var(--cardw);
+        height: var(--cardh);
+    }
+}
+
+
+@keyframes slidel
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0);
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+    to
+    {
+        top: var(--ltoy);
+        left: var(--ltox);
+        transform: translate3d(-50%, -50%, 0);
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+}
+
+@keyframes slider
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0);
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+    to
+    {
+        top: var(--rtoy);
+        left: var(--rtox);
+        transform: translate3d(-50%, -50%, 0);
+        width: var(--ocardw);
+        height: var(--ocardh);
+    }
+}
+
+@keyframes lopen
+{
+    from
+    {
+        top: var(--lfromy);
+        left: var(--lfromx);
+    }    
+    to
+    {
+        top: var(--ltoy);
+        left: var(--ltox);
+    }
+}
+
+@keyframes lclose
+{
+    from
+    {
+        top: var(--ltoy);
+        left: var(--ltox);
+    }
+    to
+    {
+        top: var(--lfromy);
+        left: var(--lfromx);
+    }
+}
+
+@keyframes lslider
+{
+    from
+    {
+        top: var(--ltoy);
+        left: var(--ltox);
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+    }
+}
+
+@keyframes ropen
+{
+    from
+    {
+        top: var(--rfromy);
+        left: var(--rfromx);
+    }    
+    to
+    {
+        top: var(--rtoy);
+        left: var(--rtox);
+    }
+}
+
+@keyframes rclose
+{
+    from
+    {
+        top: var(--rtoy);
+        left: var(--rtox);
+    }
+    to
+    {
+        top: var(--rfromy);
+        left: var(--rfromx);
+    }
+}
+
+@keyframes rslidel
+{
+    from
+    {
+        top: var(--rtoy);
+        left: var(--rtox);
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+    }
+}
+
+/* @keyframes flip
+{
+    from
+    {
+        transform: rotateY(0deg);
+    }
+    to
+    {
+        transform: rotateY(180deg);
+    }
+} */
+
+/* @keyframes spin
+{
+    from
+    {
+        transform: rotateY(180deg);
+    }
+    to
+    {
+        transform: rotateY(540deg);
+    }
+} */
+
+@keyframes show
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes hide
+{
+    from
+    {
+        opacity: 1;
+    }
+    to
+    {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 639px)
+{
+
+    :root
+    {
+        --width: 480px;
+        --height: auto;
+    }
+}
+
+@media screen and (max-width: 479px)
+{
+
+    :root
+    {
+        --width: 320px;
+        --height: auto;
+    }
+}
+
+@media screen and (max-width: 319px)
+{
+
+    :root
+    {
+        --width: 160px;
+        --height: auto;
+    }
+}
+
+@media screen and (min-width: 2100px) and (min-height: 1200px)
+{
+    :root
+    {
+        --width: 1280px;
+        --height: auto;
+        --top: 32px;
+        --bottom: 80px;
+    
+        --cardw: 256px;
+        --cardh: 384px;
+        --cardp: 32px;
+        
+        --ocardw: 512px;
+        --ocardh: 768px;
+        --ocardp: 64px;
+    
+        --pcardh: 352px;
+        --pcardw: 224px;
+        --pcardp: 48px;
+    
+        --np: 10px;
+        --pnp: 26px;
+        --onp: 48px;
+    
+        --lh: 40px;
+        --lw: 40px;
+        --lp: 8px;
+        --lpt: 16px;
+    
+        --hh: 320px;
+        --hw: 576px;
+        --fs: 22px;
+        --fb: 44px;
+
+        --fromx: 0px;
+        --fromy: 0px;
+        --tox: 0px;
+        --toy: 0px;
+    
+        --lfromx: -256px;
+        --lfromy: 50vh;
+        --ltox: 0px;
+        --ltoy: 50vh;
+    
+        --rfromx: 150vw;
+        --rfromy: 50vh;
+        --rtox: 100vw;
+        --rtoy: 50vh;
+    }
+}

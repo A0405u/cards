@@ -1,0 +1,268 @@
+:root
+{
+    --bg: black;
+    --fg: white;
+    --light: white;
+    --dark: blue;
+    --width: 640px;
+    --height: 448px;
+    --top: 16vh;
+    --cardw: 128px;
+    --cardh: 192px;
+    --fromx: 0px;
+    --fromy: 0px;
+    --tox: 0px;
+    --toy: 0px;
+    --fromr: 0deg;
+    --tor: 180deg;
+}
+
+*
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100vh;
+    width: 100%;
+    background: var(--bg);
+}
+
+main
+{
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: var(--width);
+    height: var(--height);
+    margin: auto;
+    color: var(--fg);
+    text-align: center;
+}
+
+img
+{
+    image-rendering:optimizeSpeed;             /* Legal fallback */
+    image-rendering:-moz-crisp-edges;          /* Firefox        */
+    image-rendering:-o-crisp-edges;            /* Opera          */
+    image-rendering:-webkit-optimize-contrast; /* Safari         */
+    image-rendering:optimize-contrast;         /* CSS3 Proposed  */
+    image-rendering:crisp-edges;               /* CSS4 Proposed  */
+    image-rendering:pixelated;                 /* CSS4 Proposed  */
+    -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
+}
+
+.card, .opencard
+{
+    display: inline-block;
+    width: var(--cardw);
+    height: var(--cardh);
+    padding: 16px;
+    margin: auto;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    position: relative;
+}
+
+.flipper
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* .card:hover .flipper
+{
+    transform: rotateY(180deg);
+} */
+
+.card:hover
+{
+    cursor: pointer;
+}
+
+.front, .back
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.front
+{
+    transform: rotateY(180deg);
+}
+
+.back
+{
+    color: white;
+}
+
+.open
+{
+    animation: open 0.24s forwards linear;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotateY(180deg);
+}
+
+.opencard
+{
+    z-index: 2;
+    position: relative;
+}
+
+.close
+{
+    animation: close 0.24s forwards linear;
+}
+
+.background
+{
+    background: rgba(0, 0, 0, 0.9); 
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+
+body > .background:first-child
+{
+    z-index: 0;
+    display: table;
+}
+
+.selected
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: var(--cardw);
+    height: var(--cardh);
+
+}
+
+.hide
+{
+    visibility: hidden;
+}
+
+.flip
+{
+    animation: flip 0.24s forwards linear;
+}
+
+.rotate
+{
+    animation: rotate 12s infinite linear;
+}
+
+@keyframes open
+{
+    from
+    {
+        top: var(--fromy);
+        left: var(--fromx);
+        transform: translate3d(0, 0, 0) rotateY(0);
+        width: 128px;
+        height: 192px;
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(180deg);
+        width: 256px;
+        height: 384px;
+    }
+}
+
+@keyframes close
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(180deg);
+        width: 256px;
+        height: 384px;
+    }
+    to
+    {
+        top: var(--fromy);
+        left: var(--fromx);
+        transform: translate3d(0, 0, 0) rotateY(0);
+        width: 128px;
+        height: 192px;
+    }
+}
+
+@keyframes flip
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(var(--fromr));
+        width: 256px;
+        height: 384px;
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(var(--tor));
+        width: 256px;
+        height: 384px;
+    }
+}
+
+@keyframes rotate
+{
+    from
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+        width: 256px;
+        height: 384px;
+    }
+    to
+    {
+        top: var(--toy);
+        left: var(--tox);
+        transform: translate3d(-50%, -50%, 0) rotateY(360deg);
+        width: 256px;
+        height: 384px;
+    } 
+}
+
+@media screen and (orientation: portrait) {
+    
+    :root
+    {
+        --width: 320px;
+        --height: 448px;
+    }
+  }
